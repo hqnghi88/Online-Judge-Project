@@ -7,7 +7,9 @@
 /client/.env.test.local
 /client/.env.production.local
 
-
+ 
 /server/.env
 /server/node_modules
 /server/client/node_modules
+server/server.log 
+server/server.error

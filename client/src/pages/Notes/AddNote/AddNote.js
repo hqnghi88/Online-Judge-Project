@@ -174,11 +174,11 @@ const AddNote = ({ openModal, setOpenModal, isMobile, setReloadNeeded, SlideTran
                                 style={{ width: '8em', height: '2.5em' }}
                                 onChange={e => setLanguage(e.target.value)}
                             >
-                                <MenuItem value={'c'}>C</MenuItem>
+                                {/* <MenuItem value={'c'}>C</MenuItem>
                                 <MenuItem value={'cpp'}>Cpp</MenuItem>
                                 <MenuItem value={'py'}>Python</MenuItem>
+                                <MenuItem value={'js'}>JS</MenuItem> */}
                                 <MenuItem value={'java'}>JAVA</MenuItem>
-                                <MenuItem value={'js'}>JS</MenuItem>
                             </Select>
                         </FormControl>
                     </div>

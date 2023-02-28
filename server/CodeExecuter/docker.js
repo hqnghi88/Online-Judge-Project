@@ -93,22 +93,22 @@ const fileExistsDocker = (filename, containerId) => {
  * @type {Object.<string, ExecDetail>}
 */
 const details = {
-    'c': {
-        compilerCmd: id => `gcc ${id}.c -o ${id}.out -lpthread -lrt`,
-        executorCmd: id => `./${id}.out`,
-    },
-    'cpp': {
-        compilerCmd: id => `g++ ${id}.cpp -o ${id}.out`,
-        executorCmd: id => `./${id}.out`,
-    },
-    'py': {
-        compilerCmd: null,
-        executorCmd: id => `python ${id}`,
-    },
-    'js': {
-        compilerCmd: null,
-        executorCmd: id => `node ${id}`,
-    },
+    // 'c': {
+    //     compilerCmd: id => `gcc ${id}.c -o ${id}.out -lpthread -lrt`,
+    //     executorCmd: id => `./${id}.out`,
+    // },
+    // 'cpp': {
+    //     compilerCmd: id => `g++ ${id}.cpp -o ${id}.out`,
+    //     executorCmd: id => `./${id}.out`,
+    // },
+    // 'py': {
+    //     compilerCmd: null,
+    //     executorCmd: id => `python ${id}`,
+    // },
+    // 'js': {
+    //     compilerCmd: null,
+    //     executorCmd: id => `node ${id}`,
+    // },
     'java': {
         compilerCmd: id => `javac ${id}.java`,
         executorCmd: id => `java Solution`, // TODO: Update 'java Solution', to use id

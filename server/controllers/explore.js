@@ -39,7 +39,7 @@ const detailedProblemController = async (req, res) => {
     }
 }
 
-const validLanguages = ['c', 'cpp', 'py', 'js', 'java'];
+const validLanguages = ['java'];//['c', 'cpp', 'py', 'js', 'java'];
 
 const verdictController = async (req, res) => {
     try {

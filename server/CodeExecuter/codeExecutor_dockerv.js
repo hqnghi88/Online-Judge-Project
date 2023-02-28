@@ -10,17 +10,17 @@ const { dateTimeNowFormated, logger } = require('../utils');
 
 // ####################################################################################
 // ####################################################################################
-const imageIndex = { GCC: 0, PY: 1, JS: 2, JAVA: 3 };
+const imageIndex = { JAVA: 0 };// { GCC: 0, PY: 1, JS: 2, JAVA: 3 };
 const imageNames = [
-    'gcc:latest',
-    'python:3.10-slim',
-    'node:16.17.0-bullseye-slim',
+    // 'gcc:latest',
+    // 'python:3.10-slim',
+    // 'node:16.17.0-bullseye-slim',
     'openjdk:20-slim'
 ];
 const containerNames = [
-    'gcc-oj-container',
-    'py-oj-container',
-    'js-oj-container',
+    // 'gcc-oj-container',
+    // 'py-oj-container',
+    // 'js-oj-container',
     'java-oj-container'
 ];
 /** @type {string[]} */
@@ -52,26 +52,26 @@ const initAllDockerContainers = async () => {
 }
 
 const languageSpecificDetails = {
-    'c': {
-        compiledExtension: 'out',
-        inputFunction: null,
-        containerId: () => containerIds[imageIndex.GCC]
-    },
-    'cpp': {
-        compiledExtension: 'out',
-        inputFunction: null,
-        containerId: () => containerIds[imageIndex.GCC]
-    },
-    'py': {
-        compiledExtension: '',
-        inputFunction: data => (data ? data.split(' ').join('\n') : ''),
-        containerId: () => containerIds[imageIndex.PY]
-    },
-    'js': {
-        compiledExtension: '',
-        inputFunction: null,
-        containerId: () => containerIds[imageIndex.JS]
-    },
+    // 'c': {
+    //     compiledExtension: 'out',
+    //     inputFunction: null,
+    //     containerId: () => containerIds[imageIndex.GCC]
+    // },
+    // 'cpp': {
+    //     compiledExtension: 'out',
+    //     inputFunction: null,
+    //     containerId: () => containerIds[imageIndex.GCC]
+    // },
+    // 'py': {
+    //     compiledExtension: '',
+    //     inputFunction: data => (data ? data.split(' ').join('\n') : ''),
+    //     containerId: () => containerIds[imageIndex.PY]
+    // },
+    // 'js': {
+    //     compiledExtension: '',
+    //     inputFunction: null,
+    //     containerId: () => containerIds[imageIndex.JS]
+    // },
     'java': {
         compiledExtension: 'class',
         inputFunction: null,

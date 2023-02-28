@@ -3,7 +3,7 @@ const input = [
 ];
 
 const output = [
-    "Hello From Java"
+    "Hello From Java!"
 ];
 
 module.exports = { input, output };

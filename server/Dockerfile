@@ -4,7 +4,7 @@ WORKDIR /app
 COPY ./package.json /app
 RUN npm install
 COPY . /app
-EXPOSE 5000
+EXPOSE 5500
 # RUN redis-server
 CMD [ "npm", "start" ]
 

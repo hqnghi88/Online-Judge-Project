@@ -92,8 +92,10 @@ const statusController = async (req, res) => {
             return res.status(404).json({ msg: 'invalid queryId or this query has been deleted !' });
         }
         res.status(200).json(query);
-        if (query.type === 'exec' && (query.status === 'success' || query.status === 'error'))
-            await Query.deleteQueryById(queryId);
+        await query.delete();
+        // if (query.type === 'exec' && (query.status === 'success' || query.status === 'error')){
+        //     await Query.deleteQueryById(queryId);
+        // }
     } catch (error) {
         logger.error(error, dateTimeNowFormated());
         res.status(400).json({ msg: 'on error', error: JSON.stringify(error) });

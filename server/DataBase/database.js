@@ -73,7 +73,7 @@ const deleteNoteById = async noteId => {
 // Code
 const createNewCode = async params => {
     const code = new Code(params);
-    await code.save();
+    // await code.save();
     return code;
 }
 const getCodeById = async codeId => {

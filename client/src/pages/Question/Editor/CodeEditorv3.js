@@ -4,10 +4,10 @@ import AceEditor from 'react-ace'
 
 import "ace-builds/webpack-resolver"
 
-import 'ace-builds/src-noconflict/mode-javascript'
-import 'ace-builds/src-noconflict/mode-c_cpp'
+// import 'ace-builds/src-noconflict/mode-javascript'
+// import 'ace-builds/src-noconflict/mode-c_cpp'
+// import 'ace-builds/src-noconflict/mode-python'
 import 'ace-builds/src-noconflict/mode-java'
-import 'ace-builds/src-noconflict/mode-python'
 
 import 'ace-builds/src-noconflict/theme-monokai'
 import 'ace-builds/src-noconflict/ext-language_tools'
@@ -16,25 +16,16 @@ const CodeEditorv3 = props => {
 
     const { code, setCode, language, fontSize, isReadOnly = false, isLoading = false } = props;
 
-    let mode = 'c_cpp';
+    let mode = 'java';
     switch (language) {
-        case 'c':
-            mode = 'c_cpp';
-            break;
-        case 'cpp':
-            mode = 'c_cpp';
-            break;
         case 'java':
             mode = 'java';
             break;
-        case 'py':
-            mode = 'python';
-            break;
-        case 'js':
-            mode = 'javascript';
+        case 'gaml':
+            mode = 'gaml';
             break;
         default:
-            mode = 'c_cpp';
+            mode = 'java';
     }
 
     return (

@@ -6,7 +6,7 @@ const QuerySchema = new mongoose.Schema({
     },
     language: {
         type: String,
-        enum: ['java'],//['c', 'cpp', 'py', 'java', 'js'],
+        enum: ['java','gaml'],//['c', 'cpp', 'py', 'java', 'js'],
         required: true
     },
     quesId: {

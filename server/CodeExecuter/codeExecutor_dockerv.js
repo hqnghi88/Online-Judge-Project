@@ -10,29 +10,41 @@ const { dateTimeNowFormated, logger } = require('../utils');
 
 // ####################################################################################
 // ####################################################################################
-const imageIndex = { JAVA: 0 };// { GCC: 0, PY: 1, JS: 2, JAVA: 3 };
+const imageIndex = { JAVA: 0, GAML: 1 };// { GCC: 0, PY: 1, JS: 2, JAVA: 3 };
 const imageNames = [
     // 'gcc:latest',
     // 'python:3.10-slim',
     // 'node:16.17.0-bullseye-slim',
-    'openjdk:20-slim'
+    'openjdk:20-slim',
+    // 'gamaplatform/gama:1.9.0',
+    'gamaplatform/gama:1.9.0'
 ];
 const containerNames = [
     // 'gcc-oj-container',
     // 'py-oj-container',
     // 'js-oj-container',
-    'java-oj-container'
+    'java-oj-container',
+    'gama'
+];
+const containerCmd = [
+    // 'gcc-oj-container',
+    // 'py-oj-container',
+    // 'js-oj-container',
+    '',
+    // '-socket 6868'
+    ''
 ];
 /** @type {string[]} */
 const containerIds = [];
 const initDockerContainer = (image, index) => {
     const name = containerNames[index];
+    const cmd = containerCmd[index];
     return new Promise(async (resolve, reject) => {
         try {
-            // check and kill already running container
+            // check and kill already running containerC
             await killContainer(name);
             // now create new container of image
-            const data = await createContainer({ name, image });
+            const data = await createContainer({ name, image, cmd });
             containerIds[index] = data;
             resolve(`${name} Id : ${data}`);
         } catch (error) {
@@ -76,6 +88,11 @@ const languageSpecificDetails = {
         compiledExtension: 'class',
         inputFunction: null,
         containerId: () => containerIds[imageIndex.JAVA]
+    },
+    'gaml': {
+        compiledExtension: '',
+        inputFunction: null,
+        containerId: () => containerIds[imageIndex.GAML]
     }
 };
 // ####################################################################################

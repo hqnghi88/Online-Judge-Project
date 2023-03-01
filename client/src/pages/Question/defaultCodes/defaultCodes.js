@@ -37,6 +37,19 @@ class Solution {
     }
 }
 `;
+const defaultGamlCode =
+    ` 
+    model newModel
+    global{
+        init{
+            create A;
+        }
+    }
+    species A{}
+    experiment main type:gui{
+        output{}
+    }
+`;
 
 const defaultCodes = {
     c: defaultCCode,
@@ -44,6 +57,7 @@ const defaultCodes = {
     py: defaultPythonCode,
     js: defaultJsCode,
     java: defaultJavaCode,
+    gaml: defaultGamlCode,
 };
 
 export default defaultCodes;

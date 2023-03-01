@@ -28,7 +28,7 @@ const Question = () => {
     const [codeSubmittingState, setcodeSubmittingState] = useState('not-initialized');
 
     const [codeFontSize, setcodeFontSize] = useState(15);
-    const [selectedLang, setSelectedLang] = useLocalStorage('selectedlangoj', 'cpp');
+    const [selectedLang, setSelectedLang] = useLocalStorage('selectedlangoj', 'java');
     const [code, setCode] = useState(defaultCodes[selectedLang]);
     const [response, setResponse] = useState([]);
 

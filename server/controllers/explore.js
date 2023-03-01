@@ -39,7 +39,7 @@ const detailedProblemController = async (req, res) => {
     }
 }
 
-const validLanguages = ['java'];//['c', 'cpp', 'py', 'js', 'java'];
+const validLanguages = ['java','gaml'];//['c', 'cpp', 'py', 'js', 'java'];
 
 const verdictController = async (req, res) => {
     try {
@@ -92,7 +92,7 @@ const statusController = async (req, res) => {
             return res.status(404).json({ msg: 'invalid queryId or this query has been deleted !' });
         }
         res.status(200).json(query);
-        await query.delete();
+        // await query.delete();
         // if (query.type === 'exec' && (query.status === 'success' || query.status === 'error')){
         //     await Query.deleteQueryById(queryId);
         // }

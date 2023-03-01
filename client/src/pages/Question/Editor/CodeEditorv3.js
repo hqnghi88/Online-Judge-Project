@@ -7,6 +7,8 @@ import "ace-builds/webpack-resolver"
 // import 'ace-builds/src-noconflict/mode-javascript'
 // import 'ace-builds/src-noconflict/mode-c_cpp'
 // import 'ace-builds/src-noconflict/mode-python'
+// import '../../../ace/mode-gaml.js'
+// import 'ace-builds/src-noconflict/mode-gaml'
 import 'ace-builds/src-noconflict/mode-java'
 
 import 'ace-builds/src-noconflict/theme-monokai'
@@ -22,7 +24,7 @@ const CodeEditorv3 = props => {
             mode = 'java';
             break;
         case 'gaml':
-            mode = 'gaml';
+            mode = 'java';
             break;
         default:
             mode = 'java';

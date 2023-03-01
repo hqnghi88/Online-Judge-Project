@@ -64,7 +64,8 @@ const Options = props => {
                                         style={{ width: '8em', height: '2.8em' }}
                                         onChange={e => setSelectedLang(e.target.value)}
                                     > 
-                                        <MenuItem value={'java'}>Java</MenuItem>
+                                        <MenuItem value={'java'}>Java</MenuItem>                                        
+                                        <MenuItem value={'gaml'}>Gaml</MenuItem>
                                     </Select>
                                 </FormControl>
                             </div>

@@ -4,9 +4,10 @@ const { logger } = require('../utils');
 
 // name => it is the name to be given to the container
 // image => it is the name of image whose container is to be created
-const createContainer = ({ name, image }) => {
+const createContainer = ({ name, image, cmd }) => {
     return new Promise((resolve, reject) => {
-        exec(`docker run -i -d --rm --name ${name} ${image}`, (error, stdout, stderr) => {
+        logger.log(`docker run -i -d --rm --name ${name} ${image}`);
+        exec(`docker run -i -d --rm --name ${name} ${image} ${cmd}`, (error, stdout, stderr) => {
             (error || stderr) && reject({ msg: 'on docker error', error, stderr });
             const containerId = `${stdout}`.trim();
             resolve(containerId);
@@ -110,6 +111,10 @@ const details = {
     //     executorCmd: id => `node ${id}`,
     // },
     'java': {
+        compilerCmd: id => `javac ${id}.java`,
+        executorCmd: id => `java Solution`, // TODO: Update 'java Solution', to use id
+    },
+    'gaml': {
         compilerCmd: id => `javac ${id}.java`,
         executorCmd: id => `java Solution`, // TODO: Update 'java Solution', to use id
     }
